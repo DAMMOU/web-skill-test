@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TestLevel extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
+
+    public function questions(){
+        return $this->hasMany(Question::class, 'question_id');
+    }
 }
